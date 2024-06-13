@@ -60,7 +60,7 @@ class LoginScreen extends StatelessWidget {
                 isObscure: true,
               ),
             ),
-            const SizedBox(
+            SizedBox(
               height: 30,
             ),
             Container(
@@ -73,14 +73,17 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               child: InkWell(
-                onTap: () async {
-                  bool result = await AuthMethods().LoginUser(
+                // onTap: () async {
+                //   bool result = await AuthMethods().LoginUser(
+                //       _emailController.text, _passwordController.text);
+                //   if (result) {
+                //     Navigator.push(context,
+                //         MaterialPageRoute(builder: (context) => HomeScreen()));
+                //   }
+                // },
+                onTap: () {
+                  authController.LoginUser(
                       _emailController.text, _passwordController.text);
-
-                  if (result) {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => HomeScreen()));
-                  }
                 },
                 child: const Center(
                   child: Text(

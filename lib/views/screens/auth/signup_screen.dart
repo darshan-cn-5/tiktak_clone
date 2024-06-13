@@ -1,5 +1,6 @@
 // ignore_for_file: use_super_parameters, prefer_const_constructors_in_immutables, avoid_unnecessary_containers, use_build_context_synchronously, prefer_const_constructors
 
+import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
@@ -25,6 +26,8 @@ class _SignupScreenState extends State<SignupScreen> {
   final TextEditingController _usernameController = TextEditingController();
 
   Uint8List? _file;
+
+  File? image;
 
   @override
   Widget build(BuildContext context) {
@@ -76,7 +79,8 @@ class _SignupScreenState extends State<SignupScreen> {
                         left: 80,
                         child: IconButton(
                           onPressed: () {
-                            selectimage();
+                            // selectimage();
+                            authController.pickImage();
                           },
                           icon: const Icon(
                             Icons.add_a_photo,
@@ -135,19 +139,25 @@ class _SignupScreenState extends State<SignupScreen> {
                       ),
                     ),
                     child: InkWell(
-                      onTap: () async {
-                        bool result = await AuthMethods().SignupUser(
-                            _usernameController.text,
-                            _passwordController.text,
-                            _emailController.text,
-                            _file!);
-                        if (result) {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => HomeScreen()));
-                        }
-                      },
+                      // onTap: () async {
+                      //   bool result = await AuthMethods().SignupUser(
+                      //       _usernameController.text,
+                      //       _passwordController.text,
+                      //       _emailController.text,
+                      //       _file!);
+                      //   if (result) {
+                      //     Navigator.push(
+                      //         context,
+                      //         MaterialPageRoute(
+                      //             builder: (context) => HomeScreen()));
+                      //   }
+                      // },
+                      onTap: () => authController.RegisterUser(
+                        _usernameController.text,
+                        _emailController.text,
+                        _passwordController.text,
+                        authController.profilePhoto!,
+                      ),
                       child: const Center(
                         child: Text(
                           'Register',
