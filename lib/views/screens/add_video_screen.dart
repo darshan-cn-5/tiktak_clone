@@ -1,5 +1,6 @@
-import 'dart:io';
+// ignore_for_file: prefer_const_constructors, unused_import, use_super_parameters, use_build_context_synchronously
 
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tiktak/constants/constants.dart';
@@ -14,8 +15,8 @@ class AddVideoScreen extends StatelessWidget {
       Navigator.of(context).push(
         MaterialPageRoute(
           builder: (context) => ConfirmScreen(
-              // videoFile: File(video.path),
-              // videoPath: video.path,
+              videofile: File(video.path),
+              videoPath: video.path,
               ),
         ),
       );
@@ -92,7 +93,7 @@ class AddVideoScreen extends StatelessWidget {
                 'Add Video',
                 style: TextStyle(
                   fontSize: 20,
-                  color: Colors.black,
+                  color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),
               ),

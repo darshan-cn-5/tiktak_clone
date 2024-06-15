@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_string_interpolations, prefer_final_fields
+
 import "dart:typed_data";
 
 import "package:firebase_storage/firebase_storage.dart";

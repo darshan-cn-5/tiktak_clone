@@ -5,6 +5,8 @@ import "package:firebase_auth/firebase_auth.dart";
 import "package:firebase_storage/firebase_storage.dart";
 import "package:flutter/material.dart";
 import "package:tiktak/controllers/auth_controller.dart";
+import "package:tiktak/views/screens/add_video_screen.dart";
+import "package:tiktak/views/screens/profile_screen.dart";
 
 // COLORS
 
@@ -27,7 +29,9 @@ final authController = AuthController.instance;
 List pages = [
   Text("Home Screen"),
   Text("Search Screen"),
-  Text("Add Video Screen"),
+  // Text("Add Video Screen"),
+  AddVideoScreen(),
   Text('Messages Screen'),
-  Text("Profile Screen"),
+  // Text("Profile Screen"),
+  ProfileScreen(),
 ];

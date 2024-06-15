@@ -1,4 +1,4 @@
-// ignore_for_file: non_constant_identifier_names, unnecessary_string_interpolations, unnecessary_null_comparison, avoid_print, prefer_const_constructors
+// ignore_for_file: non_constant_identifier_names, unnecessary_string_interpolations, unnecessary_null_comparison, avoid_print, prefer_const_constructors, prefer_typing_uninitialized_variables, unused_local_variable
 
 import "dart:io";
 import "package:firebase_auth/firebase_auth.dart";
@@ -10,7 +10,7 @@ import "package:tiktak/models/user.dart" as model;
 import "package:tiktak/views/screens/auth/login_screen.dart";
 import "package:tiktak/views/screens/home_screen.dart";
 
-class AuthController extends GetxController {
+class AuthController extends GetxController{
   static AuthController instance = Get.find();
 
   late Rx<User?> _user;
@@ -101,6 +101,15 @@ class AuthController extends GetxController {
       } else {
         Get.snackbar("Error", "please fill all the fields");
       }
+    } catch (err) {
+      Get.snackbar("Error", "${err.toString()}");
+    }
+  }
+
+  void signOutUser() async{
+    try {
+      await firebaseAUth.signOut();
+      Get.offAll(() => LoginScreen());
     } catch (err) {
       Get.snackbar("Error", "${err.toString()}");
     }

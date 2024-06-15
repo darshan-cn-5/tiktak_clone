@@ -1,4 +1,4 @@
-// ignore_for_file: non_constant_identifier_names, empty_catches, prefer_final_fields
+// ignore_for_file: non_constant_identifier_names, empty_catches, prefer_final_fields, unnecessary_string_interpolations
 
 import "dart:typed_data";
 

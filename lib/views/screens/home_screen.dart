@@ -2,8 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:tiktak/constants/constants.dart';
-import 'package:tiktak/controllers/auth_methods.dart';
-import 'package:tiktak/views/screens/auth/login_screen.dart';
 import 'package:tiktak/widgets/custom_icon.dart';
 
 class HomeScreen extends StatefulWidget {
