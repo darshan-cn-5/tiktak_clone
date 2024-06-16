@@ -6,18 +6,20 @@ import 'package:image_picker/image_picker.dart';
 import 'package:tiktak/constants/constants.dart';
 import 'package:tiktak/views/screens/confirm_screen.dart';
 
-class AddVideoScreen extends StatelessWidget {
+class AddVideoScreen extends StatelessWidget{
+  
   const AddVideoScreen({Key? key}) : super(key: key);
 
   pickVideo(ImageSource src, BuildContext context) async {
     final video = await ImagePicker().pickVideo(source: src);
     if (video != null) {
+      Navigator.of(context).pop();
       Navigator.of(context).push(
         MaterialPageRoute(
           builder: (context) => ConfirmScreen(
-              videofile: File(video.path),
-              videoPath: video.path,
-              ),
+            videofile: File(video.path),
+            videoPath: video.path,
+          ),
         ),
       );
     }
@@ -79,7 +81,8 @@ class AddVideoScreen extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext context) {
+
+  Widget build(BuildContext context){
     return Scaffold(
       body: Center(
         child: InkWell(

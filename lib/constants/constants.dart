@@ -7,6 +7,7 @@ import "package:flutter/material.dart";
 import "package:tiktak/controllers/auth_controller.dart";
 import "package:tiktak/views/screens/add_video_screen.dart";
 import "package:tiktak/views/screens/profile_screen.dart";
+import "package:tiktak/views/screens/video_screen.dart";
 
 // COLORS
 
@@ -27,7 +28,8 @@ final authController = AuthController.instance;
 // PAGES
 
 List pages = [
-  Text("Home Screen"),
+  // Text("Home Screen"),
+  VideoScreen(),
   Text("Search Screen"),
   // Text("Add Video Screen"),
   AddVideoScreen(),

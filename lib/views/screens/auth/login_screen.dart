@@ -2,9 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:tiktak/constants/constants.dart';
-import 'package:tiktak/controllers/auth_methods.dart';
 import 'package:tiktak/views/screens/auth/signup_screen.dart';
-import 'package:tiktak/views/screens/home_screen.dart';
 import 'package:tiktak/views/widgets/text_input.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -13,7 +11,8 @@ class LoginScreen extends StatelessWidget {
   final TextEditingController _passwordController = TextEditingController();
 
   @override
-  Widget build(BuildContext context) {
+
+  Widget build(BuildContext context){
     return Scaffold(
       body: Container(
         alignment: Alignment.center,
